@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900&display=swap"
+        rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="card" class="visible">
+
+  <div id="card_coupon"></div>
+  <p>
+    Gültig auf Lebenszeit <br>
+    <span></span>
+  </p>
+  <button id="card_button" onclick="showFlyout();">Gutschein einlösen</button>
+
+</div>
+
+<div id="flyout" class="">
+  <h1>Guteschein ausfüllen</h1>
+  <label for="flyout_date">Startdatum</label>
+  <input id="flyout_date" type="date">
+  <label for="flyout_musical">Musical</label>
+  <input id="flyout_musical" placeholder="Welches Musical?">
+  <div id="flyout_buttonbar">
+    <button onclick="showFinal()">Fertig</button>
+    <button onclick="hideFlyout();" class="secondary">Abbrechen</button>
+  </div>
+</div>
+
+<div id="final" hidden>
+  Fertig!
+</div>
+
+
+<script>
+  let flyout = document.getElementById("flyout");
+  let card = document.getElementById("card");
+  let flyout_date = document.getElementById("flyout_date");
+  let flyout_musical = document.getElementById("flyout_musical");
+
+  let eingabeDatum = null;
+  let eingabeMusical = null;
+
+  window.onload = function () {
+
+  };
+
+  function showCard() {
+    card.classList.add("visible");
+  }
+
+  function hideCard() {
+    if (card.classList.contains("visible")) {
+      card.classList.remove("visible");
+    }
+  }
+
+  function showFlyout() {
+    hideCard();
+    flyout.classList.add("visible");
+  }
+
+  function hideFlyout() {
+    showCard();
+    if (flyout.classList.contains("visible")) {
+      flyout.classList.remove("visible");
+    }
+  }
+
+  function showFinal() {
+    eingabeDatum = flyout_date.value;
+    eingabeMusical = flyout_musical.value;
+    hideFlyout();
+    hideCard();
+  }
+
+
+</script>
+
+</body>
+</html>
