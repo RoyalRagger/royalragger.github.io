@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marie Geschenk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable=no>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900&display=swap"
         rel="stylesheet" type="text/css">
@@ -14,15 +14,15 @@
 
   <div id="card_coupon"></div>
   <p>
-    Gültig auf Lebenszeit <br>
-    <span></span>
+    Gültig auf Lebenszeit. <br>
+    <span>für Marie Hansen</span>
   </p>
   <button id="card_button" onclick="showFlyout();">Gutschein einlösen</button>
 
 </div>
 
 <div id="flyout" class="">
-  <h1>Guteschein ausfüllen</h1>
+  <h1>Marie, wann möchtest du nach Hamburg? ⚓️ ❤️</h1>
   <label for="flyout_date">Startdatum</label>
   <input id="flyout_date" type="date">
   <label for="flyout_musical">Musical</label>
@@ -32,10 +32,10 @@
     <button onclick="hideFlyout();" class="secondary">Abbrechen</button>
   </div>
 </div>
-
-<div id="final" hidden>
-  Fertig!
-</div>
+<!--
+<div id="final" class="hidden">
+  Fertig! Ich freu mich 😇
+</div>-->
 
 
 <script>
@@ -43,6 +43,7 @@
   let card = document.getElementById("card");
   let flyout_date = document.getElementById("flyout_date");
   let flyout_musical = document.getElementById("flyout_musical");
+  let final = document.getElementById("final");
 
   let eingabeDatum = null;
   let eingabeMusical = null;
@@ -73,11 +74,27 @@
     }
   }
 
+  function showFinalLabel() {
+    if(final.classList.contains("hidden")) {
+      final.classList.remove("hidden");
+    } else {
+      final.classList.add("hidden");
+    }
+
+  }
+
   function showFinal() {
+    if(!flyout_date.value || !flyout_musical.value) {
+      alert("Bitte gib etwas ein, Schatz :)");
+      return;
+    }
+
     eingabeDatum = flyout_date.value;
     eingabeMusical = flyout_musical.value;
     hideFlyout();
     hideCard();
+    showFinalLabel();
+    document.body.style.background = 'hsl(351, 100%, 57%)';
   }
 
 

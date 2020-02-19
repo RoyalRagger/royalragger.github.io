@@ -7,10 +7,12 @@
 body {
     margin: 0;
     min-height: 100vh;
+    min-height: -webkit-fill-available;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background .3s;
 }
 
 * {
@@ -28,7 +30,7 @@ body {
     border-radius: var(--border-radius);
     overflow: hidden;
     max-width: 100%;
-    margin: -2px 26px;
+    margin: 0 26px;
     opacity: 0;
     visibility: hidden;
     transition: .3s;
@@ -120,6 +122,7 @@ button {
     padding-left: 12px;
     font-size: 15px;
     outline: none;
+    -webkit-appearance: none;
 }
 
 #flyout label {
@@ -149,11 +152,37 @@ button {
     border: 1px solid var(--border-thin);
 }
 
+/* split final*/
+
+#final {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 50px;
+    text-align: center;
+    visibility: visible;
+    opacity: 1;
+    transition: .3s;
+    color: white;
+}
+
+#final.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
 
 /*media queries*/
 @media only screen and (max-width: 600px) {
+
+    #card {
+        width: 100%;
+    }
+
     #card.visible {
         box-shadow: none;
+        margin: 0;
     }
 
     #card_button {
