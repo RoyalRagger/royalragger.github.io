@@ -1,201 +1,260 @@
 :root {
-    --blue-background: #3B80F1;
-    --border-radius: 6px;
-    --border-thin: hsla(227, 15%, 88%, 1);
+  --blue-background: #3B80F1;
+  --border-radius: 6px;
+  --border-thin: hsla(227, 15%, 88%, 1);
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background .3s;
-    overflow: hidden;
+  margin: 0;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background .3s;
+  overflow: hidden;
 }
 
 * {
-    font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*split Card*/
 
 #card {
-    width: 460px;
-    min-height: 380px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    max-width: 100%;
-    margin: 0 26px;
-    opacity: 0;
-    visibility: hidden;
-    transition: .3s;
-    box-shadow: 0 2px 22px rgba(0, 0, 0, 0.2);
+  width: 460px;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 26px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+  box-shadow: 0 2px 22px rgba(0, 0, 0, 0.2);
 }
 
 #card.visible {
-    opacity: 1;
-    visibility: visible;
-    transition: .3s;
+  opacity: 1;
+  visibility: visible;
+  transition: .3s;
 }
 
 #card_coupon {
-    background: url("img/Coupon.svg") no-repeat;
-    background-size: cover;
-    width: 220px;
-    height: 150px;
-    margin-top: 74px;
-    margin-right: 7px;
+  background: url("img/Coupon.svg") no-repeat;
+  background-size: cover;
+  width: 220px;
+  height: 150px;
+  margin-top: 74px;
+  margin-right: 7px;
 }
 
 #card p {
-    flex: 1;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: hsla(0, 0%, 67%, 1);
-    font-weight: 400;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: hsla(0, 0%, 67%, 1);
+  font-weight: 400;
 }
 
 button {
-    box-sizing: border-box;
-    background: var(--blue-background);
-    width: 100%;
-    border: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    outline: none;
+  box-sizing: border-box;
+  background: var(--blue-background);
+  width: 100%;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
 }
 
 #card_button {
-    height: 62px;
+  height: 62px;
 }
 
 /* split Flyout */
 
 #flyout {
-    width: 400px;
-    max-width: 100%;
-    opacity: 0;
-    transition: .5s;
-    position: absolute;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-    background: white;
-    visibility: hidden;
-    max-height: 100vh;
-    border-radius: var(--border-radius);
-    display: flex;
-    flex-direction: column;
-    padding: 1em 3em 2em 3em;
-    box-sizing: border-box;
-    transform: translateY(-100px);
+  width: 400px;
+  max-width: 100%;
+  opacity: 0;
+  transition: .5s;
+  position: absolute;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  background: white;
+  visibility: hidden;
+  max-height: 100vh;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  padding: 1em 3em 2em 3em;
+  box-sizing: border-box;
+  transform: translateY(-100px);
 }
 
 #flyout.visible {
-    visibility: visible;
-    top: calc(50% - 190px);
-    opacity: 1;
-    transform: none;
+  visibility: visible;
+  top: calc(50% - 190px);
+  opacity: 1;
+  transform: none;
 }
 
 #flyout h1 {
-    color: hsla(227, 24%, 51%, 1);
-    font-weight: 600;
-    font-size: 24px;
-    margin-bottom: 2em;
+  color: hsla(227, 24%, 51%, 1);
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 2em;
 }
 
 #flyout input {
-    width: 100%;
-    height: 40px;
-    box-sizing: border-box;
-    margin-bottom: 1em;
-    border-radius: 3px;
-    border: 1px solid var(--border-thin);
-    padding-left: 12px;
-    font-size: 15px;
-    outline: none;
-    -webkit-appearance: none;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  border-radius: 3px;
+  border: 1px solid var(--border-thin);
+  padding-left: 12px;
+  font-size: 15px;
+  outline: none;
+  -webkit-appearance: none;
 }
 
 #flyout label {
-    margin-bottom: .2em;
-    color: hsla(227, 24%, 51%, 1);
-    font-size: 15px;
+  margin-bottom: .2em;
+  color: hsla(227, 24%, 51%, 1);
+  font-size: 15px;
 }
 
 #flyout_buttonbar {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 #flyout button {
-    display: inline-block;
-    width: auto;
-    font-weight: 500;
-    font-size: 14px;
-    border-radius: 3px;
-    padding: 7px 24px;
-    border: 1px solid transparent;
-    margin-right: .5em;
+  display: inline-block;
+  width: auto;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 7px 24px;
+  border: 1px solid transparent;
+  margin-right: .5em;
 }
 
 #flyout button.secondary {
-    background: transparent;
-    color: hsla(227, 17%, 68%, 1);
-    border: 1px solid var(--border-thin);
+  background: transparent;
+  color: hsla(227, 17%, 68%, 1);
+  border: 1px solid var(--border-thin);
 }
 
 /* split final*/
 
 #final {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    right: 0;
-    top: 50%;
-    height: 50px;
-    text-align: center;
-    visibility: visible;
-    opacity: 1;
-    transition: .3s;
-    color: white;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  line-height: 100vh;
+  text-align: center;
+  visibility: visible;
+  opacity: 1;
+  transition: .3s;
+  color: white;
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 1800% 1800%;
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
 }
 
 #final.hidden {
-    visibility: hidden;
-    opacity: 0;
+  visibility: hidden;
+  opacity: 0;
 }
+
+
+/*keyframes*/
+
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0 82%
+  }
+  50% {
+    background-position: 100% 19%
+  }
+  100% {
+    background-position: 0 82%
+  }
+}
+
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0 82%
+  }
+  50% {
+    background-position: 100% 19%
+  }
+  100% {
+    background-position: 0 82%
+  }
+}
+
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0 82%
+  }
+  50% {
+    background-position: 100% 19%
+  }
+  100% {
+    background-position: 0 82%
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0 82%
+  }
+  50% {
+    background-position: 100% 19%
+  }
+  100% {
+    background-position: 0 82%
+  }
+}
+
 
 /*media queries*/
 @media only screen and (max-width: 600px) {
 
-    #card {
-        width: 100%;
-    }
+  #card {
+    width: 100%;
+  }
 
-    #card.visible {
-        box-shadow: none;
-        margin: 0;
-    }
+  #card.visible {
+    box-shadow: none;
+    margin: 0;
+  }
 
-    #card_button {
-        border-radius: var(--border-radius);
-        max-width: 300px;
-    }
+  #card_button {
+    border-radius: var(--border-radius);
+    max-width: 300px;
+  }
 
-    #flyout.visible {
-        left: 0;
-        right: 0;
-        box-shadow: none;
-    }
+  #flyout.visible {
+    left: 0;
+    right: 0;
+    box-shadow: none;
+  }
 }
 
 
