@@ -120,7 +120,7 @@ button {
   margin-bottom: 1em;
   border-radius: 3px;
   border: 1px solid var(--border-thin);
-  padding-left: 12px;
+  padding: 0 12px;
   font-size: 15px;
   outline: none;
   -webkit-appearance: none;
